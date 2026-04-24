@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+   <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Kontakt – harzer_textil.963</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+ 
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+ 
+  <nav>
+    <a href="index.html" class="nav-logo">HarzerTextil <span class="nav-handle">@harzer_textil.963</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="https://www.instagram.com/harzer_textil.963" class="nav-cta">DM auf Instagram</a></li>
+    </ul>
+  </nav>
+ 
+  <header>
+    Kontakt
+    <p>Schreib uns – wir melden uns schnell!</p>
+  </header>
+ 
+  <div class="container">
+    <div class="card">
+      <h2>NACHRICHT SENDEN</h2>
+      <div class="subtitle">@harzer_textil.963 · Osterode am Harz</div>
+ 
+      <div class="form-group">
+        <label>Dein Name</label>
+        <input type="text" id="name" placeholder="z.B. Max Mustermann">
+      </div>
+ 
+      <div class="form-group">
+        <label>Deine E-Mail</label>
+        <input type="email" id="email" placeholder="deine@email.de">
+      </div>
+ 
+      <div class="form-group">
+        <label>Betreff</label>
+        <input type="text" id="betreff" placeholder="z.B. Anfrage Textildruck">
+      </div>
+ 
+      <div class="form-group">
+        <label>Nachricht</label>
+        <textarea id="nachricht" placeholder="Beschreibe deine Anfrage – Menge, Produkt, Wunsch ..."></textarea>
+      </div>
+ 
+      <button class="btn-send" onclick="sendMail()">✉️ Nachricht senden</button>
+ 
+      <div class="success-msg" id="successMsg">
+        ✅ E-Mail-Programm wurde geöffnet! Bitte sende die E-Mail ab.
+      </div>
+ 
+      <div class="divider">— ODER DIREKT —</div>
+ 
+      <div class="alt-links">
+        <a href="https://www.instagram.com/harzer_textil.963" class="alt-link" target="_blank">
+          <span class="icon">📸</span>
+          <div>
+            <span>Instagram DM</span>
+            <span class="link-label">@harzer_textil.963</span>
+          </div>
+        </a>
+        <a href="mailto:bestellung@harzertextil.de" class="alt-link">
+          <span class="icon">📧</span>
+          <div>
+            <span>Per E-Mail schreiben</span>
+            <span class="link-label">bestellung@harzertextil.de</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+ 
+  <footer>
+    <strong>HarzerTextil · @harzer_textil.963</strong><br>
+    Osterode am Harz · Niedersachsen · Bestellung per DM
+  </footer>
+ 
+  <script>
+    function sendMail() {
+      const name     = document.getElementById('name').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const betreff  = document.getElementById('betreff').value.trim();
+      const nachricht = document.getElementById('nachricht').value.trim();
+ 
+      if (!name || !email || !nachricht) {
+        alert('Bitte fülle mindestens Name, E-Mail und Nachricht aus.');
+        return;
+      }
+ 
+      const empfaenger = 'bestellung@harzertextil.de';
+      const subject    = encodeURIComponent(betreff || 'Anfrage von ' + name);
+      const body       = encodeURIComponent(
+        'Hallo HarzerTextil,\n\n' + nachricht +
+        '\n\n---\nName: ' + name +
+        '\nE-Mail: ' + email
+      );
+ 
+      window.location.href = `mailto:${empfaenger}?subject=${subject}&body=${body}`;
+ 
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+ 
+</body>
+</html>
+
