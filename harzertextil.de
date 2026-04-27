@@ -1,0 +1,361 @@
+import logo from "@/assets/harzer-logo.png";
+import workshopPress from "@/assets/workshop-press.jpg";
+import materials from "@/assets/materials.jpg";
+import mug from "@/assets/mug.jpg";
+import cards from "@/assets/cards.jpg";
+import { ArrowUpRight, Instagram, Mail, MapPin, Phone } from "lucide-react";
+
+const services = [
+  {
+    code: "01",
+    tag: "Textildruck",
+    title: "DTF & Textildruck",
+    desc: "Hochwertiger Direct-to-Film und Flexdruck auf Baumwolle, Mischgewebe und schwerer Arbeitskleidung. Waschfest, langlebig, lichtecht.",
+    specs: ["Baumwolle 180–300g", "Mischgewebe", "Funktionstextil"],
+  },
+  {
+    code: "02",
+    tag: "Signaletik",
+    title: "Schilder & Werbetechnik",
+    desc: "Aluminium-Verbundplatten, Hartschaum, Acryl. Außenwerbung, Wegeleitsysteme und Fahrzeugbeschriftung — gemacht für Wind und Wetter im Harz.",
+    specs: ["Alu-Dibond", "Acrylglas", "Hartschaum"],
+  },
+  {
+    code: "03",
+    tag: "Vinyl",
+    title: "Stickers & Aufkleber",
+    desc: "Formgeschnittene Aufkleber in Kleinserie oder Großauflage. Wetterfest, kratzfest, in matt, glanz oder transluzent.",
+    specs: ["Kiss-Cut", "Die-Cut", "Hologramm"],
+  },
+  {
+    code: "04",
+    tag: "Identity",
+    title: "Logos & Business Cards",
+    desc: "Visuelle Ankerpunkte für lokale Unternehmen. Vom Logo-Entwurf bis zur haptischen Visitenkarte mit Veredelung — alles aus einer Hand.",
+    specs: ["Logo-Design", "Letterpress", "Folienprägung"],
+  },
+  {
+    code: "05",
+    tag: "Merch",
+    title: "Tassen & Werbemittel",
+    desc: "Bedruckte Keramik, Emaille und Glas. Kleinserien für Vereine, Firmenfeiern und persönliche Geschenke mit Charakter.",
+    specs: ["Keramik", "Emaille", "Sublimation"],
+  },
+  {
+    code: "06",
+    tag: "Beratung",
+    title: "Konzept & Beratung",
+    desc: "Wir beraten persönlich — vor Ort in Osterode oder per Telefon. Material, Auflage, Farbgebung. Ehrlich und unverbindlich.",
+    specs: ["Materialmuster", "Vor-Ort-Termin", "Festpreis"],
+  },
+];
+
+const Index = () => {
+  return (
+    <div className="min-h-dvh bg-background text-foreground">
+      {/* Top utility bar */}
+      <div className="border-b border-ink/10 bg-ink text-raw">
+        <div className="flex items-center justify-between px-4 md:px-8 py-2 font-mono text-[10px] uppercase tracking-[0.2em]">
+          <span>Werkstatt aktiv · Mo–Fr 09:00–17:00</span>
+          <span className="hidden md:inline">DE-37520 · Niedersachsen</span>
+          <a href="https://www.instagram.com/harzer_textil.963" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-blade transition-colors">
+            <Instagram className="size-3" /> @harzer_textil.963
+          </a>
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <header className="border-b border-ink sticky top-0 bg-background/95 backdrop-blur z-40">
+        <nav className="flex items-center justify-between px-4 md:px-8 py-4">
+          <a href="#top" className="flex items-center gap-3">
+            <img src={logo} alt="Harzer Textil Logo" className="h-10 w-auto" width={40} height={40} />
+            <span className="font-black text-lg md:text-xl tracking-tighter uppercase">Harzer Textil</span>
+          </a>
+          <div className="hidden md:flex gap-8 font-mono text-xs font-medium uppercase tracking-widest">
+            <a href="#leistungen" className="hover:text-blade transition-colors">Leistungen</a>
+            <a href="#werkstatt" className="hover:text-blade transition-colors">Werkstatt</a>
+            <a href="#prozess" className="hover:text-blade transition-colors">Prozess</a>
+            <a href="#kontakt" className="hover:text-blade transition-colors">Kontakt</a>
+          </div>
+          <a href="#kontakt" className="px-4 md:px-6 py-2.5 bg-ink text-raw font-bold uppercase text-[11px] tracking-widest hover:bg-blade transition-colors">
+            Anfrage
+          </a>
+        </nav>
+      </header>
+
+      <main id="top">
+        {/* HERO */}
+        <section className="marking-grid border-b border-ink">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-7 lg:border-r border-ink p-6 md:p-12 lg:p-16 flex flex-col justify-between min-h-[85dvh]">
+              <div>
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-ink text-raw font-mono text-[10px] mb-10 uppercase tracking-tight">
+                  <span className="size-1.5 bg-blade rounded-full animate-pulse" />
+                  Status: Produktion aktiv · 2026
+                </div>
+                <h1 className="text-6xl sm:text-7xl lg:text-[10rem] font-black leading-[0.82] tracking-tighter uppercase">
+                  Werk<br/>
+                  Statt<br/>
+                  <span className="text-blade">Druck.</span>
+                </h1>
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-ink/60">
+                  <span>// Schilder</span>
+                  <span>// Werbematerialien</span>
+                  <span>// Logos</span>
+                  <span>// DTF-Druck</span>
+                </div>
+              </div>
+
+              <div className="mt-12 max-w-xl">
+                <p className="text-xl md:text-2xl font-medium leading-tight mb-8 text-pretty">
+                  Wir verarbeiten Rohmaterialien zu physischer Identität.<br className="hidden md:block" />
+                  Qualität & Kreativität aus einer Hand — direkt aus Osterode am Harz.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a href="#kontakt" className="group inline-flex items-center gap-3 px-6 py-4 bg-ink text-raw font-bold uppercase text-xs tracking-widest hover:bg-blade transition-colors">
+                    Projekt anfragen
+                    <ArrowUpRight className="size-4 group-hover:rotate-45 transition-transform" />
+                  </a>
+                  <a href="#leistungen" className="inline-flex items-center gap-3 px-6 py-4 border-2 border-ink font-bold uppercase text-xs tracking-widest hover:bg-ink hover:text-raw transition-all">
+                    Leistungen ansehen
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex flex-col">
+              <div className="relative overflow-hidden border-b border-ink lg:border-b-0 group min-h-[320px] lg:min-h-0 flex-1">
+                <img
+                  src={workshopPress}
+                  alt="DTF-Druck Heißpresse mit Dampf in der Werkstatt"
+                  width={1024}
+                  height={1280}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 bg-raw/95 backdrop-blur border border-ink p-3 font-mono text-[10px] leading-tight">
+                  REF: DTF_PRESS_V3<br/>
+                  TEMP: 165°C / 18s<br/>
+                  <span className="text-blade">PRODUKTION LIVE</span>
+                </div>
+                <div className="absolute bottom-4 right-4 bg-ink text-raw px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest">
+                  Werkstatt — Osterode
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 bg-ink text-raw">
+                <Stat label="Auftragsarten" value="6+" />
+                <Stat label="Lieferzeit Ø" value="3 Tage" border />
+                <Stat label="Standort" value="Harz" top />
+                <Stat label="Auflage ab" value="1 Stück" top border />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* MARQUEE TICKER */}
+        <div className="bg-blade py-3 overflow-hidden whitespace-nowrap border-b border-ink">
+          <div className="inline-block animate-marquee font-mono text-sm font-bold uppercase text-raw tracking-[0.25em]">
+            {Array.from({ length: 2 }).map((_, i) => (
+              <span key={i}>
+                {" "}STARKER DRUCK · HARTE MATERIALIEN · DTF-SPEZIALIST · OSTERODE AM HARZ · SCHILDERBAU · CUSTOM PRINT · WERBETECHNIK · BUSINESS CARDS · TASSEN · STICKER · LOGOS ·
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* LEISTUNGEN */}
+        <section id="leistungen" className="border-b border-ink">
+          <div className="px-4 md:px-8 lg:px-16 pt-16 md:pt-24 pb-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-blade">// 01 Leistungen</span>
+                <h2 className="mt-3 text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+                  Was die<br/>Werkstatt macht.
+                </h2>
+              </div>
+              <p className="max-w-md text-base text-ink/70 font-medium leading-relaxed">
+                Sechs Kerndisziplinen, ein Team. Wir denken Werbetechnik vom Material her — nicht vom Pixel. Jeder Auftrag wird in Osterode produziert.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-ink">
+            {services.map((s, i) => (
+              <div
+                key={s.code}
+                className={`group relative p-8 md:p-10 border-ink hover:bg-ink hover:text-raw transition-colors duration-300 cursor-pointer
+                  ${i % 3 !== 2 ? "lg:border-r" : ""}
+                  ${i % 2 === 0 ? "md:border-r lg:border-r" : ""}
+                  ${i < services.length - (services.length % 3 || 3) ? "border-b" : "border-b md:border-b-0"}
+                  ${i < services.length - 1 ? "border-b" : ""}
+                `}
+              >
+                <div className="flex items-start justify-between mb-12">
+                  <span className="font-mono text-[10px] uppercase tracking-widest opacity-50">{s.code} / {s.tag}</span>
+                  <ArrowUpRight className="size-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4 leading-tight">
+                  {s.title}
+                </h3>
+                <p className="text-sm leading-relaxed mb-6 opacity-80">
+                  {s.desc}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {s.specs.map((spec) => (
+                    <span key={spec} className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 border border-current/30">
+                      {spec}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* WERKSTATT — image grid */}
+        <section id="werkstatt" className="border-b border-ink">
+          <div className="px-4 md:px-8 lg:px-16 pt-16 md:pt-24 pb-12">
+            <div className="grid grid-cols-12 gap-6 mb-12">
+              <div className="col-span-12 md:col-span-4">
+                <span className="font-mono text-xs uppercase tracking-widest text-blade">// 02 Werkstatt</span>
+                <h2 className="mt-3 text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]">
+                  Material<br/>archiv.
+                </h2>
+              </div>
+              <div className="col-span-12 md:col-span-7 md:col-start-6 self-end">
+                <p className="text-lg text-ink/70 font-medium leading-relaxed">
+                  Echte Stücke aus laufender Produktion. Keine Renderings, keine Stockfotos — sondern Druck, der heute durch unsere Hände gegangen ist.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-12 border-t border-ink">
+            <Tile className="col-span-12 md:col-span-8 md:border-r border-ink" image={materials} title="Aluminium · Schilder" subtitle="Material 047-HZ" />
+            <Tile className="col-span-12 md:col-span-4 border-t md:border-t-0 border-ink" image={cards} title="Letterpress · Cards" subtitle="Material 122-HZ" dark />
+            <Tile className="col-span-12 md:col-span-5 border-t md:border-r border-ink" image={mug} title="Keramik · Tassen" subtitle="Material 089-HZ" dark />
+            <div className="col-span-12 md:col-span-7 border-t border-ink p-8 md:p-12 bg-ink text-raw flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-blade">// Werkstatt-Notiz</span>
+                <p className="mt-6 text-2xl md:text-3xl font-medium leading-snug text-balance">
+                  „Wir drucken nichts, was wir nicht selbst tragen, aufhängen oder verschenken würden."
+                </p>
+              </div>
+              <div className="mt-8 flex items-center justify-between font-mono text-[10px] uppercase tracking-widest opacity-60">
+                <span>— Harzer Textil</span>
+                <span>EST. Osterode</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROZESS */}
+        <section id="prozess" className="border-b border-ink">
+          <div className="px-4 md:px-8 lg:px-16 py-16 md:py-24">
+            <div className="mb-16">
+              <span className="font-mono text-xs uppercase tracking-widest text-blade">// 03 Prozess</span>
+              <h2 className="mt-3 text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+                Vom Briefing<br/>
+                <span className="italic font-light">bis zur Übergabe.</span>
+              </h2>
+            </div>
+
+            <ol className="grid grid-cols-1 md:grid-cols-4 border-t border-l border-ink">
+              {[
+                { n: "01", t: "Briefing", d: "Per DM, E-Mail oder Termin vor Ort. Ehrlich, unkompliziert." },
+                { n: "02", t: "Konzept", d: "Materialvorschlag, Mockup, Festpreis innerhalb von 48h." },
+                { n: "03", t: "Produktion", d: "Druck und Veredelung in der eigenen Werkstatt." },
+                { n: "04", t: "Übergabe", d: "Abholung in Osterode oder Versand mit DHL." },
+              ].map((step) => (
+                <li key={step.n} className="border-r border-b border-ink p-8 md:p-10 hover:bg-blade hover:text-raw transition-colors">
+                  <div className="font-mono text-xs uppercase tracking-widest mb-12 opacity-60">Schritt {step.n}</div>
+                  <h3 className="text-3xl font-black uppercase mb-3">{step.t}</h3>
+                  <p className="text-sm font-medium leading-relaxed opacity-90">{step.d}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="kontakt" className="bg-ink text-raw noise">
+          <div className="px-4 md:px-8 lg:px-16 py-20 md:py-32 grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-7">
+              <span className="font-mono text-xs uppercase tracking-widest text-blade">// 04 Kontakt</span>
+              <h2 className="mt-3 text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85]">
+                Bestellung<br/>per DM.<br/>
+                <span className="text-blade">Oder klassisch.</span>
+              </h2>
+              <p className="mt-8 max-w-lg text-lg text-raw/70 leading-relaxed">
+                Schreib uns deine Idee. Wir melden uns innerhalb von 24 Stunden mit einem ehrlichen Vorschlag — unverbindlich, kostenfrei.
+              </p>
+            </div>
+
+            <div className="col-span-12 md:col-span-5 flex flex-col gap-6 md:pt-16">
+              <ContactRow icon={<Instagram className="size-5" />} label="Instagram (bevorzugt)" value="@harzer_textil.963" href="https://www.instagram.com/harzer_textil.963" />
+              <ContactRow icon={<Mail className="size-5" />} label="E-Mail" value="hallo@harzertextil.de" href="mailto:hallo@harzertextil.de" />
+              <ContactRow icon={<Phone className="size-5" />} label="Telefon" value="Auf Anfrage via DM" />
+              <ContactRow icon={<MapPin className="size-5" />} label="Werkstatt" value="Osterode am Harz · Niedersachsen" />
+            </div>
+          </div>
+
+          <div className="border-t border-raw/15 px-4 md:px-8 lg:px-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[10px] uppercase tracking-widest text-raw/50">
+            <span>© 2026 Harzer Textil · Custom Print & Werbetechnik</span>
+            <span>Made in Osterode am Harz</span>
+            <span>v 1.0 / Industrial Edition</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+const Stat = ({ label, value, border, top }: { label: string; value: string; border?: boolean; top?: boolean }) => (
+  <div className={`p-6 ${border ? "border-l border-raw/10" : ""} ${top ? "border-t border-raw/10" : ""}`}>
+    <div className="font-mono text-[10px] uppercase tracking-widest text-raw/50 mb-2">{label}</div>
+    <div className="text-3xl md:text-4xl font-black tracking-tighter">{value}</div>
+  </div>
+);
+
+const Tile = ({
+  image,
+  title,
+  subtitle,
+  className = "",
+  dark = false,
+}: {
+  image: string;
+  title: string;
+  subtitle: string;
+  className?: string;
+  dark?: boolean;
+}) => (
+  <div className={`relative aspect-[4/3] overflow-hidden group ${className}`}>
+    <img src={image} alt={title} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+    <div className={`absolute top-4 left-4 px-2 py-1 font-mono text-[10px] uppercase tracking-widest ${dark ? "bg-raw text-ink" : "bg-ink text-raw"}`}>
+      {subtitle}
+    </div>
+    <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-raw mix-blend-difference">
+      <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight">{title}</h3>
+      <ArrowUpRight className="size-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+    </div>
+  </div>
+);
+
+const ContactRow = ({ icon, label, value, href }: { icon: React.ReactNode; label: string; value: string; href?: string }) => {
+  const Inner = (
+    <div className="group flex items-center justify-between py-5 border-b border-raw/15 hover:border-blade transition-colors">
+      <div className="flex items-center gap-4">
+        <span className="text-blade group-hover:scale-110 transition-transform">{icon}</span>
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-widest text-raw/50">{label}</div>
+          <div className="text-lg font-bold">{value}</div>
+        </div>
+      </div>
+      {href && <ArrowUpRight className="size-5 group-hover:rotate-45 group-hover:text-blade transition-all" />}
+    </div>
+  );
+  return href ? <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">{Inner}</a> : Inner;
+};
+
+export default Index;
